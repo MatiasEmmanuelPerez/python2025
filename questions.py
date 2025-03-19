@@ -27,8 +27,8 @@ correct_answers_index = [1, 2, 0, 3, 1]
 # puntos del usuario
 puntos = 0
 
-# combina las 3 listas en una sola y selecciona 3 preguntas aleatorias(que pueden repetirse) cada una con sus posibles soluciones y el indice de la respuesta correcta
-questions_to_ask = random.choices(list(zip(questions, answers, correct_answers_index)), k=3)
+# combina las 3 listas en una sola y selecciona 3 preguntas aleatorias(que NO pueden repetirse) cada una con sus posibles soluciones y el indice de la respuesta correcta
+questions_to_ask = random.sample(list(zip(questions, answers, correct_answers_index)), k=3)
 
 
 # El usuario deberá contestar 3 preguntas
