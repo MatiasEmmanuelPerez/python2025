@@ -26,6 +26,7 @@ correct_answers_index = [1, 2, 0, 3, 1]
 
 # El usuario deberá contestar 3 preguntas
 for _ in range(3):
+
     # Se selecciona una pregunta aleatoria
     question_index = random.randint(0, len(questions) - 1)
 
@@ -36,7 +37,17 @@ for _ in range(3):
 
     # El usuario tiene 2 intentos para responder correctamente
     for intento in range(2):
-        user_answer = int(input("Respuesta: ")) - 1
+        user_answer = int(input("Respuesta: "))
+
+        # punto7a
+        if user_answer not in [0, 1, 2, 3]:
+            print("Respuesta no válida")
+            exit(1)
+        else:
+            user_answer = int (user_answer) - 1
+
+        
+
         # Se verifica si la respuesta es correcta
         if user_answer == correct_answers_index[question_index]:
             print("¡Correcto!")
